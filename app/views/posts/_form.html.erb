@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+  
+  <div class="form-group">
+    <%= form.text_field :title, id: :post_title, placeholder: "Title", class: "form-input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :post_body %>
+  <div class="form-group">
+    <%= form.text_area :body, id: :post_body, placeholder: "Body", rows: 25, class: "form-input" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :published %>
     <%= form.check_box :published, id: :post_published %>
   </div>
 
   <div class="actions">
-    <%= form.submit nil, class: 'btn btn-primary' %>
+    <%= form.submit nil, class: 'btn btn-primary btn-lg' %>
   </div>
+
 <% end %>
