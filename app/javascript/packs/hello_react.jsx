@@ -2,25 +2,20 @@
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import PostIndex from '../components/post-index';
+import PostHeader from '../components/post-header';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import { BrowserRouter } from 'react-router-dom';
+import PostView from '../components/post-view';
+import App from '../components/App';
+import WebpackerReact from 'webpacker-react';
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
+WebpackerReact.setup({PostIndex});
+WebpackerReact.setup({PostHeader});
+WebpackerReact.setup({Header});
+WebpackerReact.setup({Footer});
+WebpackerReact.setup({PostView});
+WebpackerReact.setup({App});
 
-Hello.defaultProps = {
-  name: 'David'
-}
 
-Hello.propTypes = {
-  name: PropTypes.string
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})

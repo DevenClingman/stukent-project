@@ -1,19 +1,9 @@
-<p id="notice"><%= notice %></p>
+<%= react_component('PostView', {
+    title: @post.title,
+    factorial: @post.factorial,
+    body: @post.body,
+    published: @post.published
+  }) %>
 
-<div class="card">
-  <div class="card-header">
-    <div class="card-title h2 text-center"><%= @post.title %> about factorials <%= @post.factorial %></div>
-  </div>
-  <div class="card-body">
-    <p><%= @post.body %></p>
-  </div>
-  <div class="card-footer text-center">
-    <p>Published: <span class="btn btn-primary btn-sm"><%= @post.published %></span></p>
-  </div>
-</div>
 
-<div class="text-center">
-  <br><br>
-  <%= link_to 'Edit Post', edit_post_path(@post), class: "btn btn-success btn-sm" %> |
-  <%= link_to 'Back', posts_path, class: "btn btn-error btn-sm" %>
-</div>
+
