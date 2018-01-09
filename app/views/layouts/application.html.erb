@@ -6,13 +6,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'hello_react' %>
   </head>
 
   <body>
     <div class="container">
-      <%= render 'shared/navbar' %>
+      <%= react_component('Header', {}) %>
       <%= yield %>
-      <%= render 'shared/footer' %>
+      <%= react_component('Footer', {
+        year: "2018", 
+        name: "Deven Clingman", 
+        rights_reserved: "All rights reserved"}) %>
     </div>
   </body>
 </html>

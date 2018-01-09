@@ -1,32 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<div class="text-center">
-  <h1>Posts</h1>
-  <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-lg' %>
-  <br><br>
-</div> 
 
+<%= react_component("PostHeader",{}) %>
 
-<div class="container">
-  <% @posts.each do |post| %>
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title h3 text-center"><%= post.title %></div>       
-      </div>
-      <div class="card-body">
-        <%= post.body.slice(0, 200) %>...        
-      </div>
-      <div class="card-footer">
-        Published: <%= post.published %><br><br>
-        <div class="text-center">
-          <%= link_to 'View', post, class: "btn btn-primary btn-sm" %>
-          <%= link_to 'Edit', edit_post_path(post), class: "btn btn-success btn-sm" %>
-          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-error btn-sm" %>
-        </div>
-      </div>
-    </div>
-    <br>
-  <% end %>
+<% @posts.each do |post| %>
+  <%= react_component("PostIndex",{
+    title: post.title,
+    body: post.body,
+    published: post.published,
+    factorial: post.factorial
+  }) %>
+<% end %>
+   
 </div>
+
+
 
 
