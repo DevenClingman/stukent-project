@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class PostView extends Component {
+
   render(){
     return(
       <div>
@@ -19,9 +20,9 @@ class PostView extends Component {
 
         <div className="text-center">
           <br/><br/>
-          <a href="#" className="btn btn-primary btn-sm">Edit</a>
+          <button onClick={ this.factorialChangeHandler } className="btn btn-primary btn-sm">Edit</button>
           <span> | </span>
-          <a href="#" className="btn btn-success btn-sm">Back</a>
+          <button className="btn btn-success btn-sm">Back</button>
         </div>
       </div>
     )

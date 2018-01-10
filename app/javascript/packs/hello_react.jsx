@@ -6,7 +6,6 @@ import PostIndex from '../components/post-index';
 import PostHeader from '../components/post-header';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import { BrowserRouter } from 'react-router-dom';
 import PostView from '../components/post-view';
 import App from '../components/App';
 import WebpackerReact from 'webpacker-react';
